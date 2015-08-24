@@ -51,6 +51,8 @@ task sourcesJar(type: Jar) {
 
 dependencies {
     compile 'org.jetbrains.kotlin:kotlin-stdlib:0.12.613'
+    compile 'org.jetbrains.kotlin:kotlin-reflect:0.12.613'
+    compile 'org.luaj:luaj-jse:3.0.1' // Lua support
 
     testCompile 'junit:junit:4.12'
     testCompile "org.assertj:assertj-core:1.7.0"

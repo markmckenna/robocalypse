@@ -1,0 +1,22 @@
+package com.lantopia.robocalypse
+
+import com.lantopia.robocalypse.model.Game
+
+
+/** Executes the main game loop for the Robocalypse game. */
+fun main(args: Array<String>) {
+
+}
+
+
+/**
+ * Executed every time the game is allowed to update.  This function is responsible for executing the
+ * programs of each robot in the game and updating context events.
+ */
+fun Game.update(tick: Int) {
+    // Have each robot run its program
+    world.robots.forEach {
+        val (robot, pos) = it
+        robot.program.execute(robot, tick) // TODO: Apply some kind of rlimit here
+    }
+}
