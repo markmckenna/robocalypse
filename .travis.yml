@@ -1,1 +1,9 @@
 language: java
+
+notifications:
+  email:
+    recipients:
+      - brent.smith@redspace.com
+      - mark.mckenna@redspace.com
+    on_success: change
+    on_failure: change
