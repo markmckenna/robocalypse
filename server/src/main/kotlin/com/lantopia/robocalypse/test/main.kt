@@ -17,6 +17,6 @@ fun Game.update(tick: Int) {
     // Have each robot run its program
     world.robots.forEach {
         val (robot, pos) = it
-        robot.program.execute(robot, tick) // TODO: Apply some kind of rlimit here
+        robot.runCycle(tick) // TODO: Apply some kind of rlimit here
     }
 }
