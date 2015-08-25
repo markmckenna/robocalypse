@@ -1,5 +1,6 @@
-# Robocalypse
-Post-apocalyptic survival game with robots
+# Robocalypse [![Build Status](https://travis-ci.org/markmckenna/robocalypse.svg?branch=master)](https://travis-ci.org/markmckenna/robocalypse)
+
+Post-apocalyptic survival game with robots 
 
 # Development
 
