@@ -7,3 +7,4 @@ notifications:
       - mark.mckenna@redspace.com
     on_success: change
     on_failure: change
+  slack: redspace:zl6TpOjRxLeLRqV7I6bNecR5
