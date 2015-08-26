@@ -1,4 +1,4 @@
-package com.lantopia.robocalypse.model
+package com.lantopia.robocalypse.test.model
 
 public data class Position(val x : Int, val y : Int)
 public data class Bunker(val player: Player)

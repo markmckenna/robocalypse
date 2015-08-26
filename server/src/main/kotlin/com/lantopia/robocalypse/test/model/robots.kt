@@ -1,4 +1,4 @@
-package com.lantopia.robocalypse.model
+package com.lantopia.robocalypse.test.model
 
 import kotlin.reflect.KCallable
 import kotlin.reflect.KClass

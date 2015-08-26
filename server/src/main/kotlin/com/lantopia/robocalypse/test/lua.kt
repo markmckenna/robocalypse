@@ -1,4 +1,4 @@
-package com.lantopia.robocalypse
+package com.lantopia.robocalypse.test
 
 import com.lantopia.robocalypse.model.ProgrammedRobot
 import com.lantopia.robocalypse.model.Robot
