@@ -1,4 +1,4 @@
-package com.lantopia.robocalypse.test
+package com.lantopia.robocalypse
 
 import com.lantopia.robocalypse.model.Game
 

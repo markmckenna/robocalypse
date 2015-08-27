@@ -1,4 +1,4 @@
-package com.lantopia.robocalypse.test
+package com.lantopia.robocalypse
 
 import com.lantopia.robocalypse.model.ProgrammedRobot
 import com.lantopia.robocalypse.model.Robot
@@ -15,24 +15,24 @@ class LuaProgrammedRobot(script: String, robot: Robot) : ProgrammedRobot(script,
 
         robot.components.forEach { component ->
             globals.get("require").call(
-                LuaValue.valueOf(component.name),
+                    LuaValue.valueOf(component.name),
                 object : TwoArgFunction() {
                     override fun call(moduleName: LuaValue, env: LuaValue): LuaValue? {
                         val library = LuaValue.tableOf(
-                            component.functions.flatMap { function ->
-                                listOf(LuaValue.valueOf(function.name),
-                                        object : VarArgFunction() {
-                                            override fun invoke(args: Varargs?) : Varargs? {
-                                                when (args) {
-                                                    null -> return toLuaValue(function.invoke(robot))
-                                                    else -> return toLuaValue(function.invoke(robot,
+                                component.functions.flatMap { function ->
+                                    listOf(LuaValue.valueOf(function.name),
+                                            object : VarArgFunction() {
+                                                override fun invoke(args: Varargs?): Varargs? {
+                                                    when (args) {
+                                                        null -> return toLuaValue(function.invoke(robot))
+                                                        else -> return toLuaValue(function.invoke(robot,
                                                                 0.rangeTo(args.narg()).map { i ->
                                                                     fromLuaValue(args.arg(i))
                                                                 }))
+                                                    }
                                                 }
-                                            }
-                                        })
-                            }.toTypedArray()
+                                            })
+                                }.toTypedArray()
                         )
                         env.set(moduleName, library)
                         return library
