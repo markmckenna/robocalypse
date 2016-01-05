@@ -24,8 +24,8 @@ class LuaProgrammedRobot(script: String, robot: Robot) : ProgrammedRobot(script,
                                             object : VarArgFunction() {
                                                 override fun invoke(args: Varargs?): Varargs? {
                                                     when (args) {
-                                                        null -> return toLuaValue(function.invoke(robot))
-                                                        else -> return toLuaValue(function.invoke(robot,
+                                                        null -> return toLuaValue(function.invoke(robot, component))
+                                                        else -> return toLuaValue(function.invoke(robot, component,
                                                                 0.rangeTo(args.narg()).map { i ->
                                                                     fromLuaValue(args.arg(i))
                                                                 }))

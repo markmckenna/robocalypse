@@ -1,5 +1,7 @@
 package com.lantopia.robocalypse.model
 
+import com.lantopia.robocalypse.components.movement.Component
+
 public data class Position(val x : Int, val y : Int)
 public data class Bunker(val player: Player)
 
@@ -14,5 +16,5 @@ public data class Bunker(val player: Player)
 public data class World(val name : String,
             val lastPosition : Position,
             val robots : MutableMap<ProgrammedRobot, Position>,
-            val components : MutableMap<Component, Position>,
+            val components : MutableMap<Component<*>, Position>,
             val bunkers : Map<Bunker, Position>)

@@ -1,5 +1,7 @@
 package com.lantopia.robocalypse
 
+import com.lantopia.robocalypse.components.movement.MovementComponent
+import com.lantopia.robocalypse.components.movement.PoweredComponent
 import com.lantopia.robocalypse.model.Game
 
 
@@ -18,5 +20,11 @@ fun Game.update(tick: Int) {
     world.robots.forEach {
         val (robot, pos) = it
         robot.runCycle(tick) // TODO: Apply some kind of rlimit here
+    }
+
+    world.robots.forEach {
+        val (robot, pos) = it
+        // move robots with power and speed
+
     }
 }

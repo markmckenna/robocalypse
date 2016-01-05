@@ -2,13 +2,11 @@ package com.lantopia.robocalypse.model
 
 import kotlin.reflect.KCallable
 import kotlin.reflect.KClass
+import com.lantopia.robocalypse.components.movement.Component
 
-/**
- * A robotic component, giving the robot a unit of functionality. Most functionality is exposed in the form of new API
- * calls, which the embedded program is able to access.  When a program is bound to a robot, the program will use all
- * of the robot's connected components to build the library that it exposes to the programmer.
- */
-public abstract data class Component(val name: String, val functions: Set<Function>)
+public enum class Direction {
+    NORTH, SOUTH, WEST, EAST
+}
 
 /**
  * A robot that does its master's bidding (in theory).
@@ -19,13 +17,12 @@ public abstract data class Component(val name: String, val functions: Set<Functi
  * cycles are available to the robot in each tick, how much general-purpose data storage is available, how resistant
  * the robot is to the actions of other robots and the environment, and so on.
  */
-public data class Robot(val owner: Player, val components: Set<Component>)
-
+public class Robot(val owner: Player, val components: Set<Component<*>>)
 
 /** One function exposed by a component */
-public abstract class Function(val name: String, val args: Int) {
+public abstract class Function<T : Component<T>>(val name: String, val args: Int) {
     /** Execute this function to... execute this function */
-    public abstract fun invoke(robot: Robot, vararg args: Any?): Any?
+    public abstract fun invoke(robot: Robot, component: T, vararg args: Any?): Any?
 }
 
 
