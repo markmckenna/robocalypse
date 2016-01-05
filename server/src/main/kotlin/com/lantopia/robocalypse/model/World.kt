@@ -1,6 +1,6 @@
 package com.lantopia.robocalypse.model
 
-import com.lantopia.robocalypse.components.movement.Component
+import com.lantopia.robocalypse.model.Component
 
 public data class Position(val x : Int, val y : Int)
 public data class Bunker(val player: Player)

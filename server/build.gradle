@@ -1,13 +1,14 @@
 description = 'Post-apocalyptic survival game with robots'
 
 buildscript {
+    ext.kotlin_version = '1.0.0-beta-4584'
     repositories {
         mavenCentral()
         jcenter()
     }
 
     dependencies {
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.12.613'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -50,18 +51,22 @@ task sourcesJar(type: Jar) {
 }
 
 dependencies {
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.12.613'
-    compile 'org.jetbrains.kotlin:kotlin-reflect:0.12.613'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     compile 'org.luaj:luaj-jse:3.0.1' // Lua support
 
     testCompile 'junit:junit:4.12'
     testCompile "org.assertj:assertj-core:1.7.0"
     testCompile 'org.mockito:mockito-core:1.9.5'
     testCompile 'com.github.tomakehurst:wiremock:1.55:standalone'
+
 }
 
 artifacts {
     archives jar
     archives generateDebugJavadoc
     archives sourcesJar
+}
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
 }

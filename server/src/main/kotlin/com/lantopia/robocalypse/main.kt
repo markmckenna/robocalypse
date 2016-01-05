@@ -1,7 +1,7 @@
 package com.lantopia.robocalypse
 
-import com.lantopia.robocalypse.components.movement.MovementComponent
-import com.lantopia.robocalypse.components.movement.PoweredComponent
+import com.lantopia.robocalypse.model.MovementComponent
+import com.lantopia.robocalypse.model.PoweredComponent
 import com.lantopia.robocalypse.model.Game
 
 

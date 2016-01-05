@@ -2,7 +2,7 @@ package com.lantopia.robocalypse.model
 
 import kotlin.reflect.KCallable
 import kotlin.reflect.KClass
-import com.lantopia.robocalypse.components.movement.Component
+import com.lantopia.robocalypse.model.Component
 
 public enum class Direction {
     NORTH, SOUTH, WEST, EAST
